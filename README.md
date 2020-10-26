@@ -6,6 +6,11 @@
 4. Ejecutar el script `./Instalador.R`
 5. Hallar la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 6. Abrir con cualquier editor de texto el archivo procesamiento.R y en la linea #70 cambiar los numerales por la escala hallada en el punto anterior.
+7. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella 
+8. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono
+9. Otorgar permisos de ejecución a dichos archivos `chmod +x monitorio.R` y  `chmod +x inicio.sh`
+10. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
+11. Ejecutar el archivo `./inicio.sh`
 
 Con los pasos anteriores el programa quedó completamente funcional, sin embargo una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta funcionalidad debe realizar los siguientes pasos:
 
