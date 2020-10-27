@@ -11,11 +11,14 @@ Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo
 5. Hallar la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 6. Abrir con cualquier editor de texto el archivo procesamiento.R y en la linea #70 cambiar los numerales por la escala hallada en el punto anterior.
 7. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella 
-8. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono
-9. Otorgar permisos de ejecución a dichos archivos `chmod +x monitorio.R` y  `chmod +x inicio.sh`
-10. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`
-11. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
-12. Ejecutar el archivo `./inicio.sh`
+8. Instalar en esta aplicación el servicio ssh mediante el comando `pkg install openssh`
+9. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo 
+10. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador
+11. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono
+12. Otorgar permisos de ejecución a dichos archivos `chmod +x monitorio.R` y  `chmod +x inicio.sh`
+13. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`
+14. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
+15. Ejecutar el archivo `./inicio.sh`
 
 Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realizar procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
 
@@ -33,7 +36,7 @@ Usar en combinación con la herramienta incron para ejecutar esta herramienta un
 
 * Instalar incron con el comando `apt install incron`
 * Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
-* utilice el comando `ìncronta -e` para crear una nueva regla
+* utilice el comando `ìncrontab -e` para crear una nueva regla
 * La plantilla de la regla debe ser similar a esta `/ruta/carpeta/Fotos/de/la/herramienta/    IN_CREATE       /ruta/a/la/herramienta/procesamiento.R $@/$#`
 * Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
 
