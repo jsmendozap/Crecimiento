@@ -38,7 +38,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 1. Instalar Git en la máquina `apt install git`
 2. Clonar el repositorio  mediante `git clone https://github.com/jsmendozap/Crecimiento`
 3. Conceder permisos de ejecución al script Instalador.R a través del comando `chmod +x Instalador.R` 
-4. Ejecutar el script `./Instalador.R`
+4. Abrir el archivo `./Instalador.R` y quitarle los numerales a las filas 32 y 33. Guarde cambios y ejecútelo.  
 5. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 6. Editar el archivo `procesamiento.R` y en la linea #68 cambiar los numerales por el valor hallado en el punto anterior.
 7. Editar el archivo `procesamiento.py` y modificar las lineas 29, 31, 36, 44 y 45 reemplezando los numerales por la ubicación de la carpeta descargada `~/.../crecimiento/`.
