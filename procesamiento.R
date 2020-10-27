@@ -9,8 +9,6 @@ library(reticulate)
 #chat_id <- "#######"  
 
 #py_install("<Paquete>", pip = TRUE)
-path_to_python <- "/usr/bin/python3"
-use_python(path_to_python)
 ps <- import_from_path(module =  "procesamiento", path = getwd(), convert = T)
 
 Sys.sleep(15)
@@ -26,7 +24,7 @@ archivo = archivo[1]
 
 imagen <- ps$completa(archivo, c(30,35,40), c(70,255,255))
 
-procesado <- dir(paste(ruta,"Salidas", sep = "/"))
+procesado <- dir(paste(ruta,"salidas", sep = "/"))
 procesado = procesado[1]
 
 ps$altura(procesado)
@@ -74,7 +72,7 @@ inf <- paste(altura, fecha, sep = ",")
 ### Actualizando información en BD ###
 
 write.table(x = inf, file = paste(ruta, "Resultados/Datos.txt", sep = "/") , append = T, sep = ",", row.names = F, col.names = F, quote = F)
-system(paste(paste("rm", ruta, sep = " "), "Resultados/coordenadas.csv", sep = "/"))
+file.remove(paste(getwd(), "Resultados/coordenadas.csv", sep = "/"))
 
 Mensaje <- paste("la altura calculada fue de", round(altura,2), "cm", sep = " ")
 #bot$sendMessage(chat_id = chat_id, text = Mensaje)
