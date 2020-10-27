@@ -38,6 +38,7 @@ Con los pasos anteriores el programa quedó completamente funcional (la herramie
 * Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
 
 
-- Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día.
+- Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
+Advertencia: La posición de interacción puede variar dependiendo de la marca y modelo del dispositivo.
 
 ![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png)
