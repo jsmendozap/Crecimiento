@@ -19,7 +19,7 @@ Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo
 
 Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realizar procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
 
-- una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta    funcionalidad debe realizar los siguientes pasos:
+una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta    funcionalidad debe realizar los siguientes pasos:
 
 * Crear un bot en telegram (este proceso se realiza facilmente con @botfather) y obtener el Token
 * Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (Ajustes -> Cuentas -> Telegram)
@@ -29,7 +29,7 @@ Con los pasos anteriores el programa quedó completamente funcional (la herramie
 * Otorgar permisos de ejecución `chmod +x movido.sh`
 
 
-- Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento 
+Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento 
 
 * Instalar incron con el comando `apt install incron`
 * Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
@@ -38,7 +38,7 @@ Con los pasos anteriores el programa quedó completamente funcional (la herramie
 * Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
 
 
-- Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
+Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
 Advertencia: La posición de interacción puede variar dependiendo de la marca y modelo del dispositivo.
 
 ![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png)
