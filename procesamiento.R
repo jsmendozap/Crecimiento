@@ -5,8 +5,8 @@ library(factoextra)
 library(fpc)
 library(telegram.bot)
 library(reticulate)
-#bot <- Bot(token = "#######") 
-#chat_id <- "#######"  
+#bot <- Bot(token = "XXXXXX") 
+#chat_id <- "XXXXXX"  
 
 #py_install("<Paquete>", pip = TRUE)
 ps <- import_from_path(module =  "procesamiento", path = getwd(), convert = T)
