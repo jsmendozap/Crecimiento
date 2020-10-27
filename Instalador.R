@@ -10,6 +10,7 @@ for(i in 1:length(librerias)){
 ### Configurando el ambiente de python ###
 
 paquetes <- dir("~/.local/share/r-miniconda/envs/r-reticulate/lib/python3.6/site-packages/")
+#paquetes <- dir(paste("C:/Users", strsplit(getwd(), "/")[[1]][3], "AppData/Local/r-miniconda/envs/r-reticulate/Lib/site-packages", sep = "/"))
 python <- c("opencv-python", "numpy", "PIL", "imageio", "pandas")
 
 for(i in 1:length(python)){
