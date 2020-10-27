@@ -11,7 +11,7 @@ Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo
 5. Hallar la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 6. Abrir con cualquier editor de texto el archivo procesamiento.R y en la linea #70 cambiar los numerales por la escala hallada en el punto anterior.
 7. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella 
-8. Instalar en esta aplicación el servicio ssh mediante el comando `pkg install openssh` en termux y `apt install openssh` en el computador
+8. Instalar el servicio ssh mediante el comando `pkg install openssh` en termux y `apt install openssh` en el computador
 9. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo 
 10. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador
 11. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono
