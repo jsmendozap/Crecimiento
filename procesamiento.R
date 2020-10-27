@@ -18,9 +18,9 @@ ruta <- getwd()
 archivo = dir(paste(ruta,"Fotos", sep = "/"))
 archivo = archivo[1]
 
-#[30,120,40], [70,255,255] hojas y tallo
-#[40,40,40], [70,255,255] verde 
-#[20,50,59], [30,200,250] café
+#[30,120,40], [70,255,255] 
+#[40,40,40], [70,255,255]  
+#[20,50,59], [30,200,250] 
 
 ### Aplicando el primer procesamiento (binarización) ###
 
