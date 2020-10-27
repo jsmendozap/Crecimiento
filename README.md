@@ -25,3 +25,5 @@ Con los pasos anteriores el programa quedó completamente funcional, sin embargo
 * En la linea 8 reemplazar "xxxxxx" por "token obtenido al crear el bot" y en la linea 9 por "ID de la cuenta de telegram"
 * En el archivo `movido.sh` cambiar las lineas 3 y 4 también por el token del bot y el id de la cuenta de telegram
 * Otorgar permisos de ejecución `chmod +x movido.sh`
+
+![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png)
