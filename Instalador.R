@@ -26,7 +26,7 @@ dir.create(paste(ruta, "Fotos", sep = "/"))
 dir.create(paste(ruta, "Registro", sep = "/"))
 dir.create(paste(ruta, "Registro2", sep = "/"))
 dir.create(paste(ruta, "Resultados", sep = "/"))
-dir.create(paste(ruta, "Salidas", sep = "/"))
+dir.create(paste(ruta, "salidas", sep = "/"))
 dir.create(paste(ruta, "imagenes", sep = "/"))
 
 #system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
