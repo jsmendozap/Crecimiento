@@ -17,7 +17,9 @@ Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo
 11. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
 12. Ejecutar el archivo `./inicio.sh`
 
-Con los pasos anteriores el programa quedó completamente funcional, sin embargo una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta funcionalidad debe realizar los siguientes pasos:
+Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realizar procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
+
+- una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta    funcionalidad debe realizar los siguientes pasos:
 
 * Crear un bot en telegram (este proceso se realiza facilmente con @botfather) y obtener el Token
 * Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (Ajustes -> Cuentas -> Telegram)
@@ -26,4 +28,16 @@ Con los pasos anteriores el programa quedó completamente funcional, sin embargo
 * En el archivo `movido.sh` cambiar las lineas 3 y 4 también por el token del bot y el id de la cuenta de telegram
 * Otorgar permisos de ejecución `chmod +x movido.sh`
 
-![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png){ width = 20% }
+
+- Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento 
+
+* Instalar incron con el comando `apt install incron`
+* Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
+* utilice el comando `ìncronta -e` para crear una nueva regla
+* `/ruta/carpeta/Fotos/de/la/herramienta/    IN_CREATE       /ruta/a/la/herramienta/procesamiento.R $@/$#`
+* Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
+
+
+- Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día.
+
+![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png)
