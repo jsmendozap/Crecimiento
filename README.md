@@ -2,7 +2,7 @@
 
 Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo linux fue desarrollada como parte de un proyecto para el curso de Fertilidad de Suelos en el cual se busca realizar mediciones del crecimiento en altura de las plantas de forma periódica y no asistida, usando como herramienta un telefono celular establecido en un lugar de manera permanente y con el cual se toman fotografias cada cierto periodo de tiempo (establecido por el usuario) y estas son enviadas de manera autónoma a un computador para su posterior procesamiento, obteniendo como resultado un archivo en formato txt con la fecha y la medición obtenida en cada fotografía.
 
-La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y puede requerir ligeras modificaciones este intervalo según varien las condiciones de luz. Las lineas 21, 22 y 23 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales pero se pueden realizar variaciones a dicho intervalo según el gusto del usuario y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar.
+La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y puede requerir ligeras modificaciones este intervalo según varien las condiciones de luz. Las lineas 21, 22 y 23 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales pero se pueden realizar variaciones a dicho intervalo según el gusto del usuario y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar y reemplzando los límites deseados en la linea 27 de este script.
 
 # Guia de instalación y configuración
 
@@ -43,7 +43,7 @@ Usar en combinación con la herramienta incron para ejecutar esta herramienta un
 * Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
 
 
-Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. Adjunto como sería una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
+Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. [Aquí](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png) se puede encontrar una plantilla de como configurar una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
+
 Advertencia: La posición de interacción puede variar dependiendo de la marca y modelo del dispositivo.
 
-![Macro](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png)
