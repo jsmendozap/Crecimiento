@@ -2,6 +2,8 @@
 
 Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo linux fue desarrollada como parte de un proyecto para el curso de Fertilidad de Suelos en el cual se busca realizar mediciones del crecimiento en altura de las plantas de forma periódica y no asistida, usando como herramienta un telefono celular establecido en un lugar de manera permanente y con el cual se toman fotografias cada cierto periodo de tiempo (establecido por el usuario) y estas son enviadas de manera autónoma a un computador para su posterior procesamiento, obteniendo como resultado un archivo en formato txt con la fecha y la medición obtenida en cada fotografía.
 
+La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y puede requerir ligeras modificaciones este intervalo según varien las condiciones de luz. Las lineas 21, 22 y 23 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales pero se pueden realizar variaciones a dicho intervalo según el gusto del usuario y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar.
+
 # Guia de instalación y configuración
 
 1. Instalar Git en la máquina `apt install git`
