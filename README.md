@@ -22,15 +22,16 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 5. Configure el protocolo ssh en su computador siguiendo el apartado **Configurar servidor SSH Windows 10** de [este](https://www.profesionalreview.com/2018/11/30/ssh-windows-10/) blog.
 6. Halle la escala de la fotografía (puede hacerlo ayudado de un software específico para este fin como [ImageJ](https://imagej.nih.gov/ij/download.html))
 7. Editar el archivo `procesamiento.R` y en la linea #68 cambiar los numerales por el valor hallado en el punto anterior.
-8. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella
-9. Instalar el servicio ssh mediante el comando `pkg install openssh` en esta aplicación.
-10. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo. 
-11. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador.
-12. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono.
-13.  Otorgar permisos de ejecución a dichos archivos `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` y  `chmod +x /data/data/com.termux/files/home/storage/downloads/inicio.sh`.
-14. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`.
-15. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
-16. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` y ejecutar el archivo con `./inicio.sh` para iniciar las mediciones.
+8. Editar el archivo `procesamiento.py` y modificar las lineas 29, 31, 36, 44 y 45 reemplezando los numerales por la ubicación de la carpeta descargada `C:/Users/.../crecimiento/`
+9. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella.
+10. Instalar el servicio ssh mediante el comando `pkg install openssh` en esta aplicación.
+11. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo. 
+12. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador.
+13. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono.
+14.  Otorgar permisos de ejecución a dichos archivos `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` y  `chmod +x /data/data/com.termux/files/home/storage/downloads/inicio.sh`.
+15. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`.
+16. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
+17. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` y ejecutar el archivo con `./inicio.sh` para iniciar las mediciones.
 
 # Guia de instalación y configuración en Linux
 
@@ -40,15 +41,16 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 4. Ejecutar el script `./Instalador.R`
 5. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 6. Editar el archivo `procesamiento.R` y en la linea #68 cambiar los numerales por el valor hallado en el punto anterior.
-7. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella. 
-8. Instalar el servicio ssh mediante el comando `pkg install openssh` en termux y `apt install openssh` en el computador
-9. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo.
-10. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador.
-11. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono.
-12. Otorgar permisos de ejecución a dichos archivos `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` y  `chmod +x /data/data/com.termux/files/home/storage/downloads/inicio.sh`.
-13. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`.
-14. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
-15. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` y ejecutar el archivo con `./inicio.sh` para iniciar las mediciones.
+7. Editar el archivo `procesamiento.py` y modificar las lineas 29, 31, 36, 44 y 45 reemplezando los numerales por la ubicación de la carpeta descargada `~/.../crecimiento/`.
+8. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella. 
+9. Instalar el servicio ssh mediante el comando `pkg install openssh` en termux y `apt install openssh` en el computador
+10. En termux ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo.
+11. En termux ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario de la máquina y la ip por la ip del computador.
+12. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono.
+13. Otorgar permisos de ejecución a dichos archivos `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` y  `chmod +x /data/data/com.termux/files/home/storage/downloads/inicio.sh`.
+14. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`.
+15. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
+16. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` y ejecutar el archivo con `./inicio.sh` para iniciar las mediciones.
 
 Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realizar procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
 
