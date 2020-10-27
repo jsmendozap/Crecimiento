@@ -4,6 +4,12 @@ Esta herramienta desarrollada para maquinas que corren bajo el sistema operativo
 
 La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y puede requerir ligeras modificaciones este intervalo según varien las condiciones de luz. Las lineas 21, 22 y 23 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales pero se pueden realizar variaciones a dicho intervalo según el gusto del usuario y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar y reemplzando los límites deseados en la linea 27 de este script.
 
+# Requisitos
+
+- R 3.6 o superior
+- Python 3.6 o superior
+- Termux (celular)
+
 # Guia de instalación y configuración
 
 1. Instalar Git en la máquina `apt install git`
@@ -27,7 +33,7 @@ Con los pasos anteriores el programa quedó completamente funcional (la herramie
 una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta    funcionalidad debe realizar los siguientes pasos:
 
 * Crear un bot en telegram (este proceso se realiza facilmente con @botfather) y obtener el Token
-* Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (Ajustes -> Cuentas -> Telegram)
+* Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (en el celular: Ajustes -> Cuentas -> Telegram)
 * Abrir el archivo procesamiento.R y quitarles el # a las lineas 8,9,52,68 y 80
 * En la linea 8 reemplazar "xxxxxx" por "token obtenido al crear el bot" y en la linea 9 por "ID de la cuenta de telegram"
 * En el archivo `movido.sh` cambiar las lineas 3 y 4 también por el token del bot y el id de la cuenta de telegram
