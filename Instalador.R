@@ -28,6 +28,6 @@ dir.create(paste(ruta, "Resultados", sep = "/"))
 dir.create(paste(ruta, "Salidas", sep = "/"))
 dir.create(paste(ruta, "imagenes", sep = "/"))
 
-system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
-system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
+#system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
+#system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
 
