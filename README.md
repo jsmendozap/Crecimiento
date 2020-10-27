@@ -8,6 +8,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 
 - R 3.6.3 o superior
 - Python 3.6 o superior
+- Descargar e instalar [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Termux (celular)
 
 # Guia de instalación y configuración
