@@ -10,7 +10,7 @@ for(i in 1:length(librerias)){
 ### Configurando el ambiente de python ###
 
 paquetes <- dir("~/.local/share/r-miniconda/envs/r-reticulate/lib/python3.6/site-packages/")
-python <- c("opencv-python", "numpy", "PIL", "imageio", "shutil", "pandas", "csv")
+python <- c("opencv-python", "numpy", "PIL", "imageio", "pandas")
 
 for(i in 1:length(python)){
   if(!python[i] %in% paquetes){py_install(python[i], pip = TRUE)}
