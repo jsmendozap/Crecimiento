@@ -1,11 +1,5 @@
 #! /usr/bin/env Rscript
 
-# Descargando e instalando Miniconda
-
-system("wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
-system("chmod + x Miniconda3-latest-Linux-x86_64.sh")
-system("./Miniconda3-latest-Linux-x86_64.sh")
-
 ### Instalando y cargadndo librerias ###
 
 librerias <- c("ggplot2", "dbscan", "factoextra", "fpc", "telegram.bot", "reticulate")
