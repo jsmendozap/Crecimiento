@@ -1,11 +1,19 @@
 #! /usr/bin/env Rscript
 
+# Descargando e instalando Miniconda
+
+system("wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
+system("chmod + x Miniconda3-latest-Linux-x86_64.sh")
+system("./Miniconda3-latest-Linux-x86_64.sh")
+
 ### Instalando y cargadndo librerias ###
 
 librerias <- c("ggplot2", "dbscan", "factoextra", "fpc", "telegram.bot", "reticulate")
 for(i in 1:length(librerias)){
   if(!librerias[i] %in% installed.packages()){install.packages(librerias[i])}
 }
+
+library(reticulate)
 
 ### Configurando el ambiente de python ###
 
@@ -29,6 +37,6 @@ dir.create(paste(ruta, "Resultados", sep = "/"))
 dir.create(paste(ruta, "salidas", sep = "/"))
 dir.create(paste(ruta, "imagenes", sep = "/"))
 
-#system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
-#system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
+system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
+system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
 
