@@ -15,7 +15,8 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 # Guía de instalación y configuración en Windows
 
 1. Utilice [esta](https://ubunlog.com/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/) guía para habilitar el subsistema de linux en windows 10 e instalar ubuntu.
-2. Una vez tenga linux funcionando en windows siga con las intrucciones de uso para este sistema operativo.
+2. Ejecute los comandos `sudo apt-get update` y `sudo apt-get upgrade`
+3. Una vez tenga linux funcionando en windows siga con las intrucciones de uso para este sistema operativo.
 
 # Guia de instalación y configuración en Linux
 
