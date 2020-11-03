@@ -7,14 +7,13 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 # Requisitos
 
 - R 3.6.3 o superior
-- Python 3.6 o superior
 - Termux (celular)
 
 **Nota:** Esta herramienta ha sido diseñada para ser usada en linux, sin embargo, se ofrece una guía para que los usuarios de windows puedan hacer uso de ella a través del sub sitema de linux en windows 10. 
 
 # Guía de instalación y configuración en Windows
 
-1. Utilice [esta](https://ubunlog.com/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/) guía para habilitar el subsistema de linux en windows 10 e instalar ubuntu.
+1. Utilice [esta](https://ubunlog.com/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/) guía para habilitar el subsistema de linux en windows 10 e instalar ubuntu. (Los scripts se puedean adaptar a windows completamente pero desde mi punto de vista el proceso para conectar todas las utilidades se vuelve mas engorroso y por este motivo recomiento hacerlo por esta opción).
 2. Ejecute los comandos `sudo apt-get update` y `sudo apt-get upgrade`
 3. Una vez tenga linux funcionando en windows siga con las intrucciones de uso para este sistema operativo.
 
@@ -24,7 +23,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 2. Instalar Git en la máquina `apt install git`
 3. Clonar el repositorio  mediante `git clone https://github.com/jsmendozap/Crecimiento`
 4. Conceder permisos de ejecución al script Instalador.R a través del comando `chmod +x Instalador.R` 
-5. Ejecute el instalador de paquetes con `./Instalador.R` si es usuario windows tal vez deba utilizar `sudo ./Instalador.R`
+5. Ejecute el instalador de paquetes con `./Instalador.R` si es usuario windows tal vez deba utilizar `sudo ./Instalador.R` (puede tardar algún tiempo)
 6. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 7. Editar el archivo `procesamiento.R` y en la linea #68 cambiar los numerales por el valor hallado en el punto anterior.
 8. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella. 
