@@ -53,7 +53,7 @@ Usar en combinación con la herramienta incron para ejecutar esta herramienta un
 * Instalar incron con el comando `apt install incron`
 * Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
 * utilice el comando `ìncrontab -e` para crear una nueva regla
-* La plantilla de la regla debe ser similar a esta `/ruta/carpeta/Fotos/de/la/herramienta/    IN_CREATE       ~/Crecimiento/procesamiento.R $@/$#`
+* La plantilla de la regla debe ser similar a esta `~/Crecimiento/Fotos/    IN_CREATE       ~/Crecimiento/procesamiento.R $@/$#`
 * Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
 
 
