@@ -1,7 +1,7 @@
 #! /usr/bin/env Rscript
 
 archivos <- length(dir("/data/data/com.termux/files/home/storage/dcim/Camera"))
-destino <- "usuario@ip:ruta/carpeta/Fotos/programa"
+destino <- "usuario@ip:~/Crecimiento/Fotos/"
 
 if (archivos == 1){
   nombre <- dir("/data/data/com.termux/files/home/storage/dcim/Camera")
