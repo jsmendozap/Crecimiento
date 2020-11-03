@@ -1,5 +1,7 @@
 #! /usr/bin/env Rscript
 
+system("sudo apt install libcurl4-openssl-dev libssl-dev -y")
+
 ### Instalando y cargadndo librerias ###
 
 librerias <- c("ggplot2", "dbscan", "factoextra", "fpc", "telegram.bot", "reticulate")
