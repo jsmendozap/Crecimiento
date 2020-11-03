@@ -15,6 +15,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 
 1. Utilice [esta](https://ubunlog.com/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/) guía para habilitar el subsistema de linux en windows 10 e instalar ubuntu. (Los scripts se puedean adaptar a windows completamente pero desde mi punto de vista el proceso para conectar todas las utilidades se vuelve mas engorroso y por este motivo recomiento hacerlo por esta opción).
 2. Ejecute los comandos `sudo apt-get update` y `sudo apt-get upgrade`
+3. Siga los apartados **Instalar Cliente SSH Windows 10**, **Iniciar Servidor SSH en Windows 10** y **Habilitar puerto de escucha para OpenSSH Windows 10** de [esta](https://www.profesionalreview.com/2018/11/30/ssh-windows-10/) guia para habilitar la conexión ssh.
 3. Una vez tenga linux funcionando en windows siga con las intrucciones de uso para este sistema operativo.
 
 # Guia de instalación y configuración en Linux
