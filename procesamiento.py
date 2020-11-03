@@ -18,7 +18,7 @@ from pandas import DataFrame
 
 
 def completa(entrada, bajo, alto):
-    ruta = ("######/Fotos/" + entrada)
+    ruta = ("~/Crecimiento/Fotos/" + entrada)
     imagen = cv2.imread(ruta)
     hsv = cv2.cvtColor(imagen, cv2.COLOR_BGR2HSV)
     lista_baja = bajo
@@ -26,14 +26,14 @@ def completa(entrada, bajo, alto):
     valor_b = np.array(lista_baja)
     valor_a = np.array(lista_alta)
     mascara = cv2.inRange(hsv, valor_b, valor_a)
-    cv2.imwrite(os.path.join("/#####/salidas/", entrada), mascara)
+    cv2.imwrite(os.path.join("~/Crecimiento/salidas/", entrada), mascara)
     cv2.waitKey(0)
-    shutil.move(ruta, "/#####/Registro/")
+    shutil.move(ruta, "~/Crecimiento/Registro/")
    
 ### Calculando la altura alcanzada por la planta ###
 
 def altura(nombre):
-    ruta = ("/######/salidas/"+ nombre)
+    ruta = ("~/Crecimiento/salidas/"+ nombre)
     imagen = imageio.imread(ruta)
     coordenadas = list()
     for i in range(imagen.shape[0]):
@@ -41,5 +41,5 @@ def altura(nombre):
             if imagen[i, j] > 250:
                 coordenadas.append((i,j))
     df = DataFrame(coordenadas)
-    df.to_csv("/#######/Resultados/coordenadas.csv")
-    shutil.move(ruta, "/######/Registro2/")
+    df.to_csv("~/Crecimiento/Resultados/coordenadas.csv")
+    shutil.move(ruta, "~/Crecimiento/Registro2/")
