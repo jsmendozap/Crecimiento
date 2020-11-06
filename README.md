@@ -15,7 +15,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 5. Ejecute el instalador de paquetes con `./Paquetes.R`
 6. Instalar el servicio de ssh con `apt install openssh` 
 7. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
-8. Ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
+8. Ejecutar el comando `ssh-copy-id usuario@ip -p 8022` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
 9. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 10. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
 
