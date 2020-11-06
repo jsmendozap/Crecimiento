@@ -22,5 +22,6 @@ while (archivos == 1){
   Sys.sleep(as.numeric(args[3]))
   archivos <- length(dir("/data/data/com.termux/files/home/storage/dcim/Camera"))
 }
+print("La aplicación se detuvo porque existe más de una fotografía en la carpeta")
 
 
