@@ -1,55 +1,55 @@
 # Medición sistemática de alturas
 
-Esta herramienta fue desarrollada como parte de un proyecto para el curso de Fertilidad de Suelos en el cual se busca realizar mediciones del crecimiento en altura de las plantas; para este fin se combina el script desarrollado para procesamiento de imágenes con aplicaciones de terceros en busca de realizar mediciones de forma periódica y no asistida, usando como herramienta principal un telefono celular establecido en un lugar de manera permanente y con el cual se toman fotografias cada cierto periodo de tiempo (establecido por el usuario) y posteriormente son enviadas de manera autónoma a un computador para su procesamiento, obteniendo como resultado un archivo en formato txt con la fecha y la medición obtenida en cada fotografía.
+Esta herramienta desarrollada para computadores con linux como sistema operativo, fue desarrollada como parte de un proyecto para el curso de Fertilidad de Suelos en el cual se busca realizar mediciones del crecimiento en altura de las plantas; para este fin se combina el script desarrollado para procesamiento de imágenes con aplicaciones de terceros en busca de realizar mediciones de forma periódica y no asistida, usando como herramienta principal un telefono celular establecido en un lugar de manera permanente y con el cual se toman fotografias cada cierto periodo de tiempo (establecido por el usuario) y posteriormente son enviadas de manera autónoma a un computador para su procesamiento, obteniendo como resultado un archivo en formato txt con la fecha y la medición obtenida en cada fotografía.
 
 La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y este intervalo puede requerir ligeras modificaciones según varien las condiciones de luz. Las lineas 19, 20 y 21 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales, sin embargo, sientase libre de cambiar este intervalo según sus necesidades y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar y reemplazando los límites deseados en la linea 25 de este script.
 
-# Requisitos
-
-- R 3.6.3 o superior
-- Termux (celular)
-
-**Nota:** Esta herramienta ha sido diseñada para ser usada en linux, sin embargo, se ofrece una guía para que los usuarios de windows puedan hacer uso de ella a través del sub sitema de linux en windows 10. 
-
-# Guía de instalación y configuración en Windows
-
-1. Utilice [esta](https://ubunlog.com/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/) guía para habilitar el subsistema de linux en windows 10 e instalar ubuntu. (Los scripts se puedean adaptar a windows completamente pero desde mi punto de vista el proceso para conectar todas las utilidades se vuelve mas engorroso y por este motivo recomiento hacerlo por esta opción).
-2. Ejecute los comandos `sudo apt-get update` y `sudo apt-get upgrade`
-3. Siga los apartados **Instalar Cliente SSH Windows 10**, **Iniciar Servidor SSH en Windows 10** y **Habilitar puerto de escucha para OpenSSH Windows 10** de [esta](https://www.profesionalreview.com/2018/11/30/ssh-windows-10/) guia para habilitar la conexión ssh.
-3. Una vez tenga linux funcionando en windows siga con las intrucciones de uso para este sistema operativo.
+**Nota:** Esta herramienta por defecto viene configurada para ser ejecutada desde la carpeta `/home/usuario/` del computador y usando la carpeta Camera del teléfono (la cual debe estar totalmente vacía al momento de empezar a usar la aplicación), si desea utilizar rutas distintas a las mencionadas para la ejecución de la herramienta asegurese de modificar dichos campos en los script `monitorio.R` y `procesamiento.R`
 
 # Guia de instalación y configuración en Linux
 
-1. Instalar R con `sudo apt install r-base`
-2. Instalar Git en la máquina `apt install git`
+1. Instalar R `sudo apt install r-base` 
+2. Instalar Git `sudo apt install git`
 3. Clonar el repositorio  mediante `git clone https://github.com/jsmendozap/Crecimiento`
-4. Conceder permisos de ejecución al script Instalador.R a través del comando `chmod +x Instalador.R` 
-5. Ejecute el instalador de paquetes con `./Instalador.R` si es usuario windows tal vez deba utilizar `sudo ./Instalador.R` (puede tardar algún tiempo)
-6. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
-7. Editar el archivo `procesamiento.R` y en la linea #68 cambiar los numerales por el valor hallado en el punto anterior.
-8. Instalar la aplicación Termux en el telefono celular y luego ejecutar el comando `termux-setup-storage` dentro de ella. 
-9. Instalar el servicio ssh mediante el comando `pkg install openssh` en termux y `apt install openssh` en el computador
-10. En el computador ejecutar el comando `ssh-keygen -t rsa -b 4096` y oprimir 3 veces enter hasta que aparezco el signo dolar de nuevo.
-11. En el computador ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
-12. Mover los archivos `monitoreo.R` e `inicio.sh` a la carpeta downloads del teléfono.
-13. Otorgar permisos de ejecución a dichos archivos `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` y  `chmod +x /data/data/com.termux/files/home/storage/downloads/inicio.sh`.
-14. Editar el archivo `monitoreo.R` y en la linea 4 cambiar usuario por el nombre de usuario del equipo al que se va a compartir la fotografía, la ip, por la ip del equipo y la ruta a la carpeta Fotos creada dentro de la carpeta de la herramienta una vez se ejecutó el script `Instalador.R`.
-15. Editar el archivo `inicio.sh` y reemplazar el valor de 300 por la cantidad de segundos en que desea que el programa busque nuevas fotografias en la carpeta del teléfono.
-16. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` y ejecutar el archivo con `./inicio.sh` para iniciar las mediciones.
+4. Conceder permisos de ejecución al script Paquetes.R con el comando `chmod +x Paquetes.R` 
+5. Ejecute el instalador de paquetes con `./Paquetes.R`
+6. Instalar el servicio de ssh con `apt install openssh` 
+7. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
+8. Ejecutar el comando `ssh-copy-id usuario@ip -p 22` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
+9. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
+10. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
 
-Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realizar procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
+# Guia de instalación y configuración para Termux (celular)
+
+1. Instalar [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=es_CO&gl=US) desde la play store
+2. Actualizar paquetes con `pkg update`
+3. Instalar R siguiendo [esta](https://conr.ca/post/installing-r-on-android-via-termux/) guia
+4. Dentro de la aplicación, ejecutar el comando `termux-setup-storage` 
+5. Instalar el servicio ssh mediante el comando `pkg install openssh` 
+6. Mover el archivo `monitoreo.R` a la carpeta downloads del teléfono.
+7. Otorgar permisos de ejecución a dicho archivo `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` 
+8. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` 
+9. Ejecutar el script monitoreo.R con los siguientes argumentos: 
+- El primero es el usuario de la máquina con linux
+- El segundo es la ip del computador
+- El tercero es el intervalo de tiempo en segundos durante el cual este script buscará una nueva fotografía para ser enviada al computador para su procesamiento.
+
+Ej: `./monitoreo.R juan 192.123.115.023 30` El anterior comando buscará una nueva fotografía en la carpeta camera del teléfono cada `30` segundos (3 argumento) y esta será enviada al usuario `juan` del computador con dirección ip `192.123.115.023` 
+
+Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realiza procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
 
 una extensión de la aplicación es la posibilidad de recibir notificaciones via telegram del resultado obtenido con el script. Si desea hacer uso de esta funcionalidad debe realizar los siguientes pasos:
 
 * Crear un bot en telegram (este proceso se realiza facilmente con @botfather) y obtener el Token.
 * Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (en el celular: Ajustes -> Cuentas -> Telegram).
-* Abrir el archivo procesamiento.R y quitarles el # a las lineas 8,9,50,66 y 78.
-* En la linea 8 reemplazar "xxxxxx" por "token obtenido al crear el bot" y en la linea 9 por "ID de la cuenta de telegram"
+* Abrir el archivo `procesamiento.R` y quitarles el # a las lineas 10,11,52,68 y 80.
+* En la linea 10 reemplazar "xxxxxx" por "token obtenido al crear el bot" y en la linea 11 por "ID de la cuenta de telegram"
 * En el archivo `movido.sh` cambiar las lineas 3 y 4 también por el token del bot y el id de la cuenta de telegram y en la linea 17 eliminar el numeral.
 * Otorgar permisos de ejecución `chmod +x /data/data/com.termux/files/home/storage/downloads/movido.sh` (se hace en Termux).
+* En el archivo `monitoreo.R` quitar el numeral de la linea numero 21.
 
 
-Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento (disponible unicamente en Linux)
+Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento
 
 * Instalar incron con el comando `apt install incron`
 * Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
