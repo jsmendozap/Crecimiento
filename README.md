@@ -10,7 +10,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 
 1. Instalar R `sudo apt install r-base` 
 2. Instalar Git `sudo apt install git`
-3. Clonar el repositorio  mediante `git clone https://github.com/jsmendozap/Crecimiento`
+3. Clonar el repositorio  con `git clone https://github.com/jsmendozap/Crecimiento`
 4. Conceder permisos de ejecución al script Paquetes.R con el comando `chmod +x Paquetes.R` 
 5. Ejecute el instalador de paquetes con `./Paquetes.R`
 6. Instalar el servicio de ssh con `apt install openssh` 
