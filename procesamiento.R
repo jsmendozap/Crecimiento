@@ -67,7 +67,7 @@ ggplot(datos2)+
 dev.off()
 #bot$send_photo(chat_id = chat_id, photo = paste(ruta, "imagenes/corregida.jpeg", sep = "/"))
 
-altura <- (abs(min(datos2$Y)-max(datos2$Y)))/args[1]
+altura <- (abs(min(datos2$Y)-max(datos2$Y)))/as.numeric(args[1])
 fecha <- Sys.Date()
 inf <- paste(altura, fecha, sep = ",")
 
