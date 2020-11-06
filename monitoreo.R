@@ -1,9 +1,13 @@
 #! /usr/bin/env Rscript
 
-archivos <- length(dir("/data/data/com.termux/files/home/storage/dcim/Camera"))
-destino <- "usuario@ip:~/Crecimiento/Fotos/"
+args <- commandArgs(trailingOnly = TRUE)
 
-if (archivos == 1){
+usuario <- args[1]
+ip <- args[2]
+destino <- paste(usuario,"@",ip,":~/Crecimiento/Fotos/", sep = "")
+archivos <- length(dir("/data/data/com.termux/files/home/storage/dcim/Camera"))
+
+while (archivos == 1){
   nombre <- dir("/data/data/com.termux/files/home/storage/dcim/Camera")
   ruta1 <- paste("/data/data/com.termux/files/home/storage/dcim/Camera", nombre, sep = "/")
   envio <- paste("#! /usr/bin/bash \nscp", ruta1, destino, sep = " ")
@@ -15,6 +19,8 @@ if (archivos == 1){
   borrar <- paste("rm", ruta1, sep = " ")
   system(borrar)
   #system("./movido.sh")
+  Sys.sleep(as.numeric(args[3]))
+  archivos <- length(dir("/data/data/com.termux/files/home/storage/dcim/Camera"))
 }
 
 
