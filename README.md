@@ -34,7 +34,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 - El segundo es la ip del computador
 - El tercero es el intervalo de tiempo en segundos durante el cual este script buscará una nueva fotografía para ser enviada al computador para su procesamiento.
 
-Ej: `./monitoreo.R juan 192.123.115.023 30` El anterior comando buscará una nueva fotografía en la carpeta camera del teléfono cada `30` segundos (3 argumento) y esta será enviada al usuario `juan` del computador con dirección ip `192.123.115.023` 
+Ej: `./monitoreo.R juan 192.123.115.023 30` El anterior comando buscará una nueva fotografía en la carpeta camera del teléfono cada `30 segundos` y esta será enviada al usuario `juan` del computador con dirección ip `192.123.115.023` 
 
 Con los pasos anteriores el programa quedó completamente funcional (la herramienta únicamente realiza procesamiento de imagen), sin embargo existen algunas configuraciones adicionales para optimizar más al proceso: 
 
