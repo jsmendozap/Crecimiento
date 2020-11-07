@@ -29,7 +29,7 @@ imagen <- ps$completa(archivo, c(30,35,40), c(70,255,255))
 
 procesado <- dir(paste(ruta,"salidas", sep = "/"))
 procesado <- procesado[1]
-procesado <- paste(ruta, "salidas", sep = "/")
+procesado <- paste(ruta, "salidas", procesado, sep = "/")
 
 ps$altura(procesado)
 
