@@ -12,7 +12,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 2. Instalar Git `sudo apt install git`
 3. Clonar el repositorio  con `git clone https://github.com/jsmendozap/Crecimiento`
 4. Conceder permisos de ejecución al script Paquetes.R con el comando `chmod +x Paquetes.R` 
-5. Ejecute el instalador de paquetes con `./Paquetes.R`
+5. Ejecute el instalador de paquetes con `sudo ./Paquetes.R`
 6. Instalar el servicio de ssh con `apt install openssh` 
 7. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
 8. Ejecutar el comando `ssh-copy-id usuario@ip -p 8022` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
