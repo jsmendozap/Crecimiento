@@ -17,6 +17,9 @@ library(reticulate)
 
 ### Configurando el ambiente de python ###
 
+path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
+use_python(path_python)
+
 paquetes <- c("opencv-python", "numpy", "Pillow", "imageio", "pandas")
 
 for(i in 1:length(paquetes)){
