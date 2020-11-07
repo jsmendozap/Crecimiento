@@ -18,26 +18,34 @@ from pandas import DataFrame
 
 
 def completa(entrada, bajo, alto):
-    ruta = (entrada)
-    imagen = cv2.imread(ruta)
+    imagen = cv2.imread(entrada)
     hsv = cv2.cvtColor(imagen, cv2.COLOR_BGR2HSV)
     valor_b = np.array(bajo)
     valor_a = np.array(alto)
     mascara = cv2.inRange(hsv, valor_b, valor_a)
-    cv2.imwrite(os.path.join("~/Crecimiento/salidas/", entrada), mascara)
+    archivo = entrada.split("/")
+    archivo = archivo[4]
+    procesado = [os.getcwd(), "Crecimiento/salidas", archivo]
+    procesado = "/".join(procesado)
+    cv2.imwrite(procesado, mascara)
     cv2.waitKey(0)
-    shutil.move(ruta, "~/Crecimiento/Registro/")
+    registro = [os.getcwd(), "Crecimiento/Registro/"]
+    registro = "/".join(registro)
+    shutil.move(entrada, registro)
    
 ### Calculando la altura alcanzada por la planta ###
 
-def altura(nombre):
-    ruta = ("~/Crecimiento/salidas/"+ nombre)
-    imagen = imageio.imread(ruta)
+def altura(archivo):
+    imagen = imageio.imread(archivo)
     coordenadas = list()
     for i in range(imagen.shape[0]):
         for j in range(imagen.shape[1]):
             if imagen[i, j] > 250:
                 coordenadas.append((i,j))
     df = DataFrame(coordenadas)
-    df.to_csv("~/Crecimiento/Resultados/coordenadas.csv")
-    shutil.move(ruta, "~/Crecimiento/Registro2/")
+    ruta = [os.getcwd(), "Crecimiento/Resultados/coordenadas.csv"]
+    ruta = "/".join(ruta)
+    df.to_csv(ruta)
+    registro = [os.getcwd(), "Crecimiento/Registro2"]
+    registro = "/".join(registro)
+    shutil.move(archivo, registro)
