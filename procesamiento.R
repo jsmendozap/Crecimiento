@@ -17,7 +17,7 @@ Sys.sleep(15)
 ruta <- getwd()
 archivo <- dir(paste(ruta,"Fotos", sep = "/"))
 archivo <- archivo[1]
-archivo <- paste(ruta, archivo, sep = "/")
+archivo <- paste(ruta, "Fotos", archivo, sep = "/")
 
 #[30,120,40], [70,255,255] 
 #[40,40,40], [70,255,255]  
