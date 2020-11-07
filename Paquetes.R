@@ -33,4 +33,5 @@ dir.create(paste(ruta, "imagenes", sep = "/"))
 
 system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
 system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
+system(paste("chmod +x", paste(ruta, "inicio.sh", sep = "/"), sep = " "))
 
