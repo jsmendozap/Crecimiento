@@ -13,12 +13,10 @@ library(reticulate)
 
 ### Configurando el ambiente de python ###
 
-paquetes <- dir("~/.local/share/r-miniconda/envs/r-reticulate/lib/python3.6/site-packages/")
-#paquetes <- dir(paste("C:/Users", strsplit(getwd(), "/")[[1]][3], "AppData/Local/r-miniconda/envs/r-reticulate/Lib/site-packages", sep = "/"))
-python <- c("opencv-python", "numpy", "Pillow", "imageio", "pandas")
+paquetes <- c("cv2", "numpy", "PIL", "imageio", "pandas")
 
 for(i in 1:length(python)){
-  if(!python[i] %in% paquetes){py_install(python[i], pip = TRUE)}
+  if(py_module_available(paquetes[i])==F){py_install(paquetes[i], pip = TRUE)}
 }
 
 
