@@ -4,7 +4,7 @@ Esta herramienta desarrollada para computadores con linux como sistema operativo
 
 La herramienta utiliza el formato HSV para segmentar los colores según un límite inferior y un límite superior en donde se encuentra el color deseado en resaltar y este intervalo puede requerir ligeras modificaciones según varien las condiciones de luz. Las lineas 22, 23 y 24 del archivo `procesamiento.R` contiene los intervalos más comunes con los cuales se puede trabajar para resaltar estructuras vegetales, sin embargo, sientase libre de cambiar este intervalo según sus necesidades y teniendo en cuenta la siguiente [imagen](https://github.com/jsmendozap/Crecimiento/blob/main/HSV.png) para el color deseado en resaltar y reemplazando los límites deseados en la linea 28 de este script.
 
-**Nota:** Esta herramienta por defecto viene configurada para ser ejecutada desde la carpeta `/home/usuario/` del computador y usando la carpeta Camera del teléfono (la cual debe estar totalmente vacía al momento de empezar a usar la aplicación), si desea utilizar rutas distintas a las mencionadas para la ejecución de la herramienta asegurese de modificar dichos campos en los script `monitorio.R` y `procesamiento.R`
+**Nota:** Esta herramienta por defecto viene configurada para ser ejecutada desde la carpeta `/home/usuario/` del computador y usando la carpeta Camera del teléfono (la cual debe estar totalmente vacía al momento de empezar a usar la aplicación), si desea utilizar rutas distintas a las mencionadas para la ejecución de la herramienta asegurese de modificar dichos campos en los script `monitorio.R`, `procesamiento.R` y `procesamiento.py`
 
 # Guía de instalación y configuración en Linux
 
