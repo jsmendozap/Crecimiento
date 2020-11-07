@@ -6,7 +6,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 
 **Nota:** Esta herramienta por defecto viene configurada para ser ejecutada desde la carpeta `/home/usuario/` del computador y usando la carpeta Camera del teléfono (la cual debe estar totalmente vacía al momento de empezar a usar la aplicación), si desea utilizar rutas distintas a las mencionadas para la ejecución de la herramienta asegurese de modificar dichos campos en los script `monitorio.R` y `procesamiento.R`
 
-# Guia de instalación y configuración en Linux
+# Guía de instalación y configuración en Linux
 
 1. Instalar R `sudo apt install r-base` 
 2. Instalar Git `sudo apt install git`
@@ -19,7 +19,9 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 9. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 10. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
 
-# Guia de instalación y configuración para Termux (celular)
+**Nota:** Si desea realizar el proceso de manera repetitiva y no asistida debe hacer uso del archivo `inicio.sh`, para esto, debe editar dicho archivo y en la linea 5 cambiar `XXX` por el valor obtenido de escala y haga que este script se vuelva ejecutable al inicio siguiendo cualquiera de los métodos presentados en esta [guía](https://computernewage.com/2019/03/09/scripting-linux-bash-ejecutar-script-arranque/#metodo-2) (Crontab es el más fácil).
+
+# Guía de instalación y configuración para Termux (celular)
 
 1. Instalar [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=es_CO&gl=US) desde la play store
 2. Actualizar paquetes con `pkg update`
@@ -42,23 +44,13 @@ una extensión de la aplicación es la posibilidad de recibir notificaciones via
 
 * Crear un bot en telegram (este proceso se realiza facilmente con @botfather) y obtener el Token.
 * Hallar el ID de la cuenta de telegram a donde llegarán las notificaciones (en el celular: Ajustes -> Cuentas -> Telegram).
-* Abrir el archivo `procesamiento.R` y quitarles el # a las lineas 10,11,52,68 y 80.
+* Abrir el archivo `procesamiento.R` y quitarles el # a las lineas 10,11,54,70 y 82.
 * En la linea 10 reemplazar "xxxxxx" por "token obtenido al crear el bot" y en la linea 11 por "ID de la cuenta de telegram"
 * En el archivo `movido.sh` cambiar las lineas 3 y 4 también por el token del bot y el id de la cuenta de telegram y en la linea 17 eliminar el numeral.
 * Otorgar permisos de ejecución `chmod +x /data/data/com.termux/files/home/storage/downloads/movido.sh` (se hace en Termux).
 * En el archivo `monitoreo.R` quitar el numeral de la linea numero 21.
 
-
-Usar en combinación con la herramienta incron para ejecutar esta herramienta una vez la fotografía llegue a la máquina en donde se realizará el procesamiento
-
-* Instalar incron con el comando `apt install incron`
-* Modificar el archivo `/etc/incron.allow` para permitir a un usuario hacer uso de la herramienta (agregar el nombre del usuario)
-* utilice el comando `ìncrontab -e` para crear una nueva regla
-* La plantilla de la regla debe ser similar a esta `~/Crecimiento/Fotos/    IN_CREATE       ~/Crecimiento/procesamiento.R $@/$#`
-* Puede encontrar una referencia mas completa en esta [página](https://www.xn--linuxenespaol-skb.com/tutoriales/monitorear-archivos-y-carpetas-en-tu-linux-con-incron-incrontab/)
-
-
-Usarla en combinación con la aplicación Macrodroid (disponible en la play store) ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. [Aquí](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png) se puede encontrar una plantilla de como configurar una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
+Recomiento usar esta herramienta en combinación con la aplicación [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid&hl=es_CO&gl=US) disponible en la play store ya que permite realizar macros y automatizar procesos del teléfono, que para este caso es un timelapse de fotografias cada cierto periodo de tiempo y de este modo automatizar completamente la herramienta. [Aquí](https://github.com/jsmendozap/Crecimiento/blob/main/Timelapse_2.png) se puede encontrar una plantilla de como configurar una macro en esta aplicación para que el teléfono tome 1 fotografía cada día. 
 
 Advertencia: La posición de interacción puede variar dependiendo de la marca y modelo del dispositivo.
 
