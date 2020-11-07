@@ -12,6 +12,7 @@ import imageio
 import os
 import shutil
 from pandas import DataFrame
+import getpass
 
 
 ### Correción de imagen ####
@@ -25,11 +26,11 @@ def completa(entrada, bajo, alto):
     mascara = cv2.inRange(hsv, valor_b, valor_a)
     archivo = entrada.split("/")
     archivo = archivo[5]
-    procesado = [os.getcwd(), "Crecimiento/salidas", archivo]
+    procesado = ["/home", getpass.getuser(), "Crecimiento/salidas", archivo]
     procesado = "/".join(procesado)
     cv2.imwrite(procesado, mascara)
     cv2.waitKey(0)
-    registro = [os.getcwd(), "Crecimiento/Registro/"]
+    registro = ["/home", getpass.getuser(), "Crecimiento/Registro/"]
     registro = "/".join(registro)
     shutil.move(entrada, registro)
    
@@ -43,9 +44,9 @@ def altura(archivo):
             if imagen[i, j] > 250:
                 coordenadas.append((i,j))
     df = DataFrame(coordenadas)
-    ruta = [os.getcwd(), "Crecimiento/Resultados/coordenadas.csv"]
+    ruta = ["/home", getpass.getuser(), "Crecimiento/Resultados/coordenadas.csv"]
     ruta = "/".join(ruta)
     df.to_csv(ruta)
-    registro = [os.getcwd(), "Crecimiento/Registro2"]
+    registro = ["/home", getpass.getuser(), "Crecimiento/Registro2"]
     registro = "/".join(registro)
     shutil.move(archivo, registro)
