@@ -18,13 +18,11 @@ from pandas import DataFrame
 
 
 def completa(entrada, bajo, alto):
-    ruta = ("~/Crecimiento/Fotos/" + entrada)
+    ruta = (entrada)
     imagen = cv2.imread(ruta)
     hsv = cv2.cvtColor(imagen, cv2.COLOR_BGR2HSV)
-    lista_baja = bajo
-    lista_alta = alto
-    valor_b = np.array(lista_baja)
-    valor_a = np.array(lista_alta)
+    valor_b = np.array(bajo)
+    valor_a = np.array(alto)
     mascara = cv2.inRange(hsv, valor_b, valor_a)
     cv2.imwrite(os.path.join("~/Crecimiento/salidas/", entrada), mascara)
     cv2.waitKey(0)
