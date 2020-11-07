@@ -15,8 +15,9 @@ ps <- import_from_path(module =  "procesamiento", path = getwd(), convert = T)
 
 Sys.sleep(15)
 ruta <- getwd()
-archivo = dir(paste(ruta,"Fotos", sep = "/"))
-archivo = archivo[1]
+archivo <- dir(paste(ruta,"Fotos", sep = "/"))
+archivo <- archivo[1]
+archivo <- paste(ruta, archivo, sep = "/")
 
 #[30,120,40], [70,255,255] 
 #[40,40,40], [70,255,255]  
@@ -27,7 +28,8 @@ archivo = archivo[1]
 imagen <- ps$completa(archivo, c(30,35,40), c(70,255,255))
 
 procesado <- dir(paste(ruta,"salidas", sep = "/"))
-procesado = procesado[1]
+procesado <- procesado[1]
+procesado <- paste(ruta, "salidas", sep = "/")
 
 ps$altura(procesado)
 
