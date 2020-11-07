@@ -15,12 +15,13 @@ system("./Miniconda3-latest-Linux-x86_64.sh")
 
 library(reticulate)
 
+path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
+use_python(path_python)
+
 conda_create()
 
 ### Configurando el ambiente de python ###
 
-path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
-use_python(path_python)
 
 paquetes <- c("opencv-python", "numpy", "Pillow", "imageio", "pandas")
 
