@@ -24,7 +24,7 @@ def completa(entrada, bajo, alto):
     valor_a = np.array(alto)
     mascara = cv2.inRange(hsv, valor_b, valor_a)
     archivo = entrada.split("/")
-    archivo = archivo[4]
+    archivo = archivo[5]
     procesado = [os.getcwd(), "Crecimiento/salidas", archivo]
     procesado = "/".join(procesado)
     cv2.imwrite(procesado, mascara)
