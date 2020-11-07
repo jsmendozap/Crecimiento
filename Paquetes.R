@@ -13,7 +13,7 @@ library(reticulate)
 
 ### Configurando el ambiente de python ###
 
-paquetes <- c("cv2", "numpy", "PIL", "imageio", "pandas")
+paquetes <- c("opencv-python", "numpy", "PIL", "imageio", "pandas")
 
 for(i in 1:length(paquetes)){
   if(py_module_available(paquetes[i])==F){py_install(paquetes[i], pip = TRUE)}
