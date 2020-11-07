@@ -19,7 +19,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 9. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
 10. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
 
-**Nota:** Si desea realizar el proceso de manera repetitiva y no asistida debe hacer uso del archivo `inicio.sh`, para esto, debe editar dicho archivo y en la linea 5 cambiar `XXX` por el valor obtenido de escala y haga que este script se vuelva ejecutable al inicio siguiendo cualquiera de los métodos presentados en esta [guía](https://computernewage.com/2019/03/09/scripting-linux-bash-ejecutar-script-arranque/#metodo-2) (Crontab es el más fácil).
+**Nota:** Si desea realizar el proceso de manera repetitiva y no asistida debe hacer uso del archivo `inicio.sh`, para esto, debe editar dicho archivo y en la linea 5 cambiar `XXX` por el valor obtenido de escala, además haga que este script se vuelva ejecutable al inicio siguiendo cualquiera de los métodos presentados en esta [guía](https://computernewage.com/2019/03/09/scripting-linux-bash-ejecutar-script-arranque/#metodo-2) (Crontab es el más fácil).
 
 # Guía de instalación y configuración para Termux (celular)
 
