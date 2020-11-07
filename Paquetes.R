@@ -10,7 +10,7 @@ for(i in 1:length(librerias)){
 }
 
 system("wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
-system("chmod +x https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
+system("chmod +x Miniconda3-latest-Linux-x86_64.sh")
 system("./Miniconda3-latest-Linux-x86_64.sh")
 
 library(reticulate)
