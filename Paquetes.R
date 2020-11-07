@@ -1,6 +1,6 @@
 #! /usr/bin/env Rscript
 
-system("sudo apt install libcurl4-openssl-dev libssl-dev inotify-tools -y")
+system("sudo apt install libcurl4-openssl-dev libssl-dev inotify-tools r-base -y")
 
 ### Instalando y cargadndo librerias ###
 
