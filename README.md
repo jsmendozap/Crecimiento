@@ -13,10 +13,8 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 3. Clonar el repositorio  con `git clone https://github.com/jsmendozap/Crecimiento`
 4. Conceder permisos de ejecución al script Paquetes.R con el comando `chmod +x Paquetes.R` 
 5. Ejecute el instalador de paquetes con `sudo ./Paquetes.R`
-6. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
-7. Ejecutar el comando `ssh-copy-id usuario@ip -p 8022` cambiando usuario por el nombre de usuario del telefono (lo obtiene en termux con `whoami` y la ip por la ip del teléfono).
-8. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
-9. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
+6. Halle la escala de la fotografía (puede ser hallada a traves de software como ImageJ)
+7. Ejecutar el script `procesamiento.R` para iniciar la aplicación poniendo como argumento el valor obtenido en el punto anterior así: `./procesamiento.R valor`
 
 **Nota:** Si desea realizar el proceso de manera repetitiva y no asistida debe hacer uso del archivo `inicio.sh`, para esto, debe editar dicho archivo y en la linea 5 cambiar `XXX` por el valor obtenido de escala, además haga que este script se vuelva ejecutable al inicio siguiendo cualquiera de los métodos presentados en esta [guía](https://computernewage.com/2019/03/09/scripting-linux-bash-ejecutar-script-arranque/) (Crontab es el más fácil).
 
@@ -26,11 +24,13 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 2. Actualizar paquetes con `pkg update`
 3. Instalar R siguiendo [esta](https://conr.ca/post/installing-r-on-android-via-termux/) guia
 4. Dentro de la aplicación, ejecutar el comando `termux-setup-storage` 
-5. Instalar el servicio ssh mediante el comando `pkg install openssh` 
-6. Mover el archivo `monitoreo.R` a la carpeta downloads del teléfono.
-7. Otorgar permisos de ejecución a dicho archivo `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` 
-8. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` 
-9. Ejecutar el script monitoreo.R con los siguientes argumentos: 
+5. Instalar el servicio ssh mediante el comando `pkg install openssh`
+6. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
+7. Ejecutar el comando `ssh-copy-id usuario@ip -p 8022` cambiando usuario e ip por el nombre de usuario y la ip del computador
+8. Mover el archivo `monitoreo.R` a la carpeta downloads del teléfono.
+9. Otorgar permisos de ejecución a dicho archivo `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` 
+10. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` 
+11. Ejecutar el script monitoreo.R con los siguientes argumentos: 
 - El primero es el usuario de la máquina con linux
 - El segundo es la ip del computador
 - El tercero es el intervalo de tiempo en segundos durante el cual este script buscará una nueva fotografía para ser enviada al computador para su procesamiento.
