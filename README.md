@@ -26,7 +26,7 @@ La herramienta utiliza el formato HSV para segmentar los colores según un lími
 4. Dentro de la aplicación, ejecutar el comando `termux-setup-storage` 
 5. Instalar el servicio ssh mediante el comando `pkg install openssh`
 6. Ejecutar el comando `ssh-keygen -t rsa -b 4096`, establecer las claves u oprimir enter para dejar vacio este espacio 
-7. Ejecutar el comando `ssh-copy-id usuario@ip -p 8022` cambiando usuario e ip por el nombre de usuario y la ip del computador
+7. Ejecutar el comando `ssh-copy-id usuario@ip` cambiando usuario e ip por el nombre de usuario y la ip del computador
 8. Mover el archivo `monitoreo.R` a la carpeta downloads del teléfono.
 9. Otorgar permisos de ejecución a dicho archivo `chmod +x /data/data/com.termux/files/home/storage/downloads/monitoreo.R` 
 10. Moverse a la carpeta downloads en Termux con `cd /data/data/com.termux/files/home/storage/downloads/` 
