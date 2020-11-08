@@ -9,19 +9,21 @@ for(i in 1:length(librerias)){
   if(!librerias[i] %in% installed.packages()){install.packages(librerias[i])}
 }
 
-system("wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
-system("chmod +x Miniconda3-latest-Linux-x86_64.sh")
-system("./Miniconda3-latest-Linux-x86_64.sh")
+#system("wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh")
+#system("chmod +x Miniconda3-latest-Linux-x86_64.sh")
+#system("./Miniconda3-latest-Linux-x86_64.sh")
 
 library(reticulate)
 
-binarios <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/bin/conda", sep = "/")
-system(paste(binarios, "create", "-p", paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/"), sep = " "))
-activar <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/")
-system(paste("conda activate", activar, sep = "/"))
+reticulate::install_miniconda()
 
-path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
-use_python(path_python)
+#binarios <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/bin/conda", sep = "/")
+#system(paste(binarios, "create", "-p", paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/"), sep = " "))
+#activar <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/")
+#system(paste("conda activate", activar, sep = "/"))
+
+#path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
+#use_python(path_python)
 
 
 ### Configurando el ambiente de python ###
