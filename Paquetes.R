@@ -15,10 +15,14 @@ system("./Miniconda3-latest-Linux-x86_64.sh")
 
 library(reticulate)
 
+binarios <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/bin/conda", sep = "/")
+system(paste(binarios, "create", "-p", paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/"), sep = " "))
+activar <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate", sep = "/")
+system("conda activate", activar, sep = "/")
+
 path_python <- paste("/home", system("whoami", intern = T), ".local/share/r-miniconda/envs/r-reticulate/bin/python", sep = "/")
 use_python(path_python)
 
-conda_create()
 
 ### Configurando el ambiente de python ###
 
