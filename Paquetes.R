@@ -9,7 +9,6 @@ for(i in 1:length(librerias)){
   if(!librerias[i] %in% installed.packages()){install.packages(librerias[i])}
 }
 
-
 ### Configurando el ambiente de python ###
 
 library(reticulate)
