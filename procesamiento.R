@@ -1,16 +1,15 @@
 #! /usr/bin/env Rscript
 
-args <- commandArgs(trailingOnly = TRUE)
-
 library(dbscan)
 library(factoextra)
 library(fpc)
 library(telegram.bot)
 library(reticulate)
-#bot <- Bot(token = "XXXXXX") 
-#chat_id <- "XXXXXX"  
+bot <- Bot(token = "TOKENBOT")
+chat_id <- "IDUSER"
 
 #py_install("<Paquete>", pip = TRUE)
+setwd("~/Crecimiento")
 ps <- import_from_path(module =  "procesamiento", path = getwd(), convert = T)
 
 Sys.sleep(15)
@@ -19,9 +18,9 @@ archivo <- dir(paste(ruta,"Fotos", sep = "/"))
 archivo <- archivo[1]
 archivo <- paste(ruta, "Fotos", archivo, sep = "/")
 
-#[30,120,40], [70,255,255] 
-#[40,40,40], [70,255,255]  
-#[20,50,59], [30,200,250] 
+#[30,120,40], [70,255,255]
+#[40,40,40], [70,255,255]
+#[20,50,59], [30,200,250]
 
 ### Aplicando el primer procesamiento (binarización) ###
 
@@ -51,7 +50,7 @@ fviz_cluster(object = cluster, data = datos, stand = FALSE,
   theme_bw() +
   theme(legend.position = "bottom")
 dev.off()
-#bot$send_photo(chat_id = chat_id, photo = paste(ruta, "imagenes/cluster.jpeg", sep = "/"))
+bot$send_photo(chat_id = chat_id, photo = paste(ruta, "imagenes/cluster.jpeg", sep = "/"))
 
 total <- vector()
 longitud <- unique(cluster$cluster)
@@ -67,9 +66,9 @@ ggplot(datos2)+
   geom_point(mapping = aes(X, Y))+
   theme_bw()
 dev.off()
-#bot$send_photo(chat_id = chat_id, photo = paste(ruta, "imagenes/corregida.jpeg", sep = "/"))
+bot$send_photo(chat_id = chat_id, photo = paste(ruta, "imagenes/corregida.jpeg", sep = "/"))
 
-altura <- (abs(min(datos2$Y)-max(datos2$Y)))/as.numeric(args[1])
+altura <- (abs(min(datos2$Y)-max(datos2$Y)))/as.numeric(ESCALA)
 fecha <- Sys.Date()
 inf <- paste(altura, fecha, sep = ",")
 
@@ -79,5 +78,4 @@ write.table(x = inf, file = paste(ruta, "Resultados/Datos.txt", sep = "/") , app
 file.remove(paste(getwd(), "Resultados/coordenadas.csv", sep = "/"))
 
 Mensaje <- paste("la altura calculada fue de", round(altura,2), "cm", sep = " ")
-#bot$sendMessage(chat_id = chat_id, text = Mensaje)
-
+bot$sendMessage(chat_id = chat_id, text = Mensaje)
