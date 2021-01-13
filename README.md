@@ -6,7 +6,7 @@
 
 # Pasos previos a la instalación
 
-<p align="justify">Esta herramienta hace uso de la interfáz de telegram para solicitar acciones en el teléfono que tomará las fotografías a través de un bot. Por lo anterior es necesario que antes de instalar y configurar la aplicación cree un bot, esto es un proceso sencillo que se puede hacer a través de @botfather directamente en la aplicación; al finalizar este proceso, por favor conserve el **token** de su bot ya que se le solicitará en el proceso de instalación, además del token deberá proporcionar el **ID** de su cuenta de telegram (lo puede encontrar en su celular: Ajustes -> Cuentas -> Telegram) y por último debe suministrar la **escala** de la fotografía, para lo cual puede utilizar ImageJ para obtenerla o cualquier otro programa de su elección.</p>
+<p align="justify">Esta herramienta hace uso de la interfáz de telegram para solicitar acciones en el teléfono que tomará las fotografías a través de un bot. Por lo anterior es necesario que antes de instalar y configurar la aplicación cree un bot, esto es un proceso sencillo que se puede hacer a través de @botfather directamente en la aplicación; al finalizar este proceso, por favor conserve el <b>token</b> de su bot ya que se le solicitará en el proceso de instalación, además del token deberá proporcionar el <b>ID</b> de su cuenta de telegram (lo puede encontrar en su celular: Ajustes -> Cuentas -> Telegram) y por último debe suministrar la <b>escala</b> de la fotografía, para lo cual puede utilizar ImageJ para obtenerla o cualquier otro programa de su elección.</p>
 
 # Guía de instalación y configuración
 
