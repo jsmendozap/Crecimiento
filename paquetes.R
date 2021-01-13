@@ -73,24 +73,15 @@ if (as.numeric(seleccion) == 1){
 
   ### Configurando área de instalación
 
-  if (ruta != paste("/home", usuario, "Crecimiento", sep = "/")){
-      if (dir.exists("~/Crecimiento") == F){dir.create("~/Crecimiento")}
-      archivos <- c("procesamiento.R", "procesamiento.py", "watch.R")
-      for (i in 1:3){
-        file.copy(from =  paste(ruta, archivos[i], sep = "/"), to = "~/Crecimiento/")
-        file.remove(archivos[i])
-      }
-  }
+  dir.create(paste(ruta, "Fotos", sep = "/"))
+  dir.create(paste(ruta, "Registro", sep = "/"))
+  dir.create(paste(ruta, "Registro2", sep = "/"))
+  dir.create(paste(ruta, "Resultados", sep = "/"))
+  dir.create(paste(ruta, "salidas", sep = "/"))
+  dir.create(paste(ruta, "imagenes", sep = "/"))
 
-  dir.create(paste("~/Crecimiento", "Fotos", sep = "/"))
-  dir.create(paste("~/Crecimiento", "Registro", sep = "/"))
-  dir.create(paste("~/Crecimiento", "Registro2", sep = "/"))
-  dir.create(paste("~/Crecimiento", "Resultados", sep = "/"))
-  dir.create(paste("~/Crecimiento", "salidas", sep = "/"))
-  dir.create(paste("~/Crecimiento", "imagenes", sep = "/"))
-
-  system(paste("chmod +x", paste("~/Crecimiento", "procesamiento.py", sep = "/"), sep = " "))
-  system(paste("chmod +x", paste("~/Crecimiento", "procesamiento.R", sep = "/"), sep = " "))
+  system(paste("chmod +x", paste(ruta, "procesamiento.py", sep = "/"), sep = " "))
+  system(paste("chmod +x", paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
 
 }else if(as.numeric(seleccion) == 2){
   library(cronR)
