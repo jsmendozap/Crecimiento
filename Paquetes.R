@@ -1,5 +1,3 @@
-system("sudo apt install libcurl4-openssl-dev libssl-dev iwatch cron openssh-server -y")
-
   ### Instalando y cargadndo librerias ###
 
   librerias <- c("ggplot2", "dbscan", "factoextra", "fpc", "telegram.bot", "reticulate", "cronR")
