@@ -107,7 +107,7 @@ bot.set_update_listener(listener)
 def command_start(m):
     cid = m.chat.id
     if cid in permitido:
-        bot.send_message(cid, "¡Bienvenido/a!".format(m.chat.first_name), reply_markup = markup)
+        bot.send_message(cid, "¡Bienvenido/a! {}".format(m.chat.first_name), reply_markup = markup)
     else:
         bot.send_message(cid, "Lo siento, usted no se encuentra autorizado para operar este bot")
 
