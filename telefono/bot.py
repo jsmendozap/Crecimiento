@@ -25,6 +25,14 @@ if "registro.txt" and "usuarios.txt" not in archivos:
     usuarios.write("NOMBRE" + ": " + str(permitido[0]))
     usuarios.close()
 
+#Cargando usuarios
+archivo = open("usuarios.txt", "r")
+usuarios = archivo.read().splitlines()
+for i in range(len(usuarios)):
+    usuario = usuarios[i].split()
+    if int(usuario[1]) not in permitido:
+       permitido.append(int(usuario[1]))
+
 #Token del BOT
 TOKEN = 'TOKENBOT'
 
@@ -99,7 +107,7 @@ bot.set_update_listener(listener)
 def command_start(m):
     cid = m.chat.id
     if cid in permitido:
-        bot.send_message(cid, "¡Bienvenido!", reply_markup = markup)
+        bot.send_message(cid, "¡Bienvenido/a!".format(m.chat.first_name), reply_markup = markup)
     else:
         bot.send_message(cid, "Lo siento, usted no se encuentra autorizado para operar este bot")
 
@@ -184,7 +192,7 @@ def callback_query(query):
         msg = bot.send_message(query.from_user.id, "Ingrese la información del nuevo usuario así:\nNombre: ID telegram")
         bot.register_next_step_handler(msg, callback = ingreso_user)
     elif query.data == "eliminar":
-        msg = bot.send_message(query.from_user.id, "Ingrese el ID de telegram del usuario a eliminar:")
+        msg = bot.send_message(query.from_user.id, "Ingrese la información del usuario a eliminar así:\nNombre: ID telegram")
         bot.register_next_step_handler(msg, callback = eliminar_user)
 
 @bot.message_handler(commands=['usuarios'])
@@ -226,7 +234,7 @@ def configuracion(m):
 def ingreso_usuario(m):
     f = open(os.getcwd() + "/monitoreo.py", "r")
     contenido = f.read().splitlines()
-    contenido[11] = "usuario <- " + str(m.text)
+    contenido[11] = "usuario = '" + str(m.text) + "'"
     nuevo = []
     for i in range(len(contenido)):
         elemento = contenido[i] + "\n"
@@ -240,7 +248,7 @@ def ingreso_usuario(m):
 def ingreso_ip(m):
     f = open(os.getcwd() + "/monitoreo.py", "r")
     contenido = f.read().splitlines()
-    contenido[12] = "ip <- " + str(m.text)
+    contenido[12] = "ip = '" + str(m.text) + "'"
     nuevo = []
     for i in range(len(contenido)):
         elemento = contenido[i] + "\n"
@@ -270,26 +278,25 @@ def ingreso_user(m):
     mensaje = str(m.text)
     f.write("\n" + mensaje)
     f.close()
-    permitido.append(int(m.chat.id))
+    id = mensaje.split()
+    permitido.append(int(id[1]))
     bot.send_message(m.chat.id, "Usuario agregado exitosamente")
 
 def eliminar_user(m):
-    mensaje = str(m.text).strip()
-    if int(mensaje) in permitido:
-        f = open(os.getcwd() + "/usuarios.txt", "r")
-        contenido = f.read().splitlines()
-        for i in range(len(contenido)):
-            if contenido[i].find(mensaje) != 0:
-                inidice = contenido[i].find(mensaje)
-        contenido.pop(indice)
-        j = open(os.getcwd() + "/usuario.txt", "w")
-        for i in range(0,len(contenido)):
-            j.writelines(contenido[i])
-        j.close()
-        permitido.remove(int(m.text))
+    mensaje = str(m.text)
+    archivo = open(os.getcwd() + "/usuarios.txt", "r")
+    usuarios = archivo.read().splitlines()
+    if mensaje in usuarios:
+        usuarios.remove(mensaje)
+        f = open(getcwd() + "/usuarios.txt", "w")
+        for i in range(len(usuarios)):
+            f.writelines(usuarios[i] + "\n")
+        f.close()
+        id = mensaje.split()
+        permitido.remove(int(id[1]))
         bot.send_message(m.chat.id, "Usuario eliminado exitosamente")
     else:
-        bot.send_message(m.chat.id, "El ID ingresado no se encuentra en la lista")
+        bot.send_message(m.chat.id, "La información ingresada no se encuentra en la lista de usuarios permitidos")
 
 # Manteniendo activo el estado del bot
 bot.polling()
