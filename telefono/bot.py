@@ -290,7 +290,10 @@ def eliminar_user(m):
         usuarios.remove(mensaje)
         f = open(getcwd() + "/usuarios.txt", "w")
         for i in range(len(usuarios)):
-            f.writelines(usuarios[i] + "\n")
+            if i == 0:
+            	f.writelines(usuarios[i])
+            else:
+            	f.writelines("\n" + usuarios[i])
         f.close()
         id = mensaje.split()
         permitido.remove(int(id[1]))
