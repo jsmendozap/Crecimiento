@@ -13,7 +13,7 @@
 <ol>Esta herramienta consta de dos partes que serán configuradas a través del proceso de instalación con la información que usted suministre.
   <li>La primera parte corresponde a los arhivos que irán en el computador a donde llegarán (de manera automática) las imágenes tomadas por el teléfono  y posteriormente realizarán el procesamiento de ellas.</li>
   <li>La segunda parte corresponde a los archivos que deben ir en el teléfono para que el bot de telegram funcione adecuadamente y este pueda responder a las acciones que solicite el usuario.</li>
- <ol>
+</ol>
 
 Cada uno de los pasos que se deben seguir para configurar las dos partes se detallan a continuación:
 
