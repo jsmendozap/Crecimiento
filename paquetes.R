@@ -31,14 +31,13 @@ if (as.numeric(seleccion) == 1){
 
   ### Configurando escala
 
+  ruta <- getwd()
   cat("Por favor ingrese el valor de la escala: ")
   escala <- readLines("stdin", 1)
 
   system(paste("rpl -w", "'ESCALA'", paste("'", escala, "'", sep = ""), paste(ruta, "procesamiento.R", sep = "/"), sep = " "))
 
   ### Configurando bot
-
-  ruta <- getwd()
 
   cat("Por favor ingrese el id de su cuenta de telegram: ")
   id <- readLines("stdin", 1)
@@ -64,6 +63,14 @@ if (as.numeric(seleccion) == 1){
   system(paste("rpl -w", "'USUARIO'", paste("'", usuario, "'", sep = ""), paste(ruta, "telefono", "monitoreo.py", sep = "/"), sep = " "))
   system(paste("rpl -w", "'IP'", paste("'", ip, "'", sep = ""), paste(ruta, "telefono", "monitoreo.py", sep = "/"), sep = " "))
 
+  ### Estableciendo tarea en Cron
+
+  system("sudo systemctl enable cron")
+
+  library(cronR)
+  cmd = cron_rscript(paste(ruta, "watch.R", sep = "/"))
+  cron_add(command = cmd, frequency = '@reboot', id = 'iwatch', description = 'monitorizar carpeta')
+
   ### Configurando área de instalación
 
   if (ruta != paste("/home", usuario, "Crecimiento", sep = "/")){
@@ -84,14 +91,6 @@ if (as.numeric(seleccion) == 1){
 
   system(paste("chmod +x", paste("~/Crecimiento", "procesamiento.py", sep = "/"), sep = " "))
   system(paste("chmod +x", paste("~/Crecimiento", "procesamiento.R", sep = "/"), sep = " "))
-
-  ### Estableciendo tarea en Cron
-
-  system("sudo systemctl enable cron")
-
-  library(cronR)
-  cmd = cron_rscript(paste(ruta, "watch.R", sep = "/"))
-  cron_add(command = cmd, frequency = '@reboot', id = 'iwatch', description = 'monitorizar carpeta')
 
 }else if(as.numeric(seleccion) == 2){
   library(cronR)

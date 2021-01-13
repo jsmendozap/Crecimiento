@@ -14,8 +14,8 @@ ip = "IP".strip()
 
 destino = usuario + "@" + ip + ":~/Crecimiento/Fotos/"
 
-nombre = os.listdir("/data/data/com.termux/files/home/storage/dcim/Camera/")
-ruta = "/data/data/com.termux/files/home/storage/dcim/Camera/" + nombre[0]
+nombre = os.listdir("/data/data/com.termux/files/home/storage/dcim/Crecimiento/")
+ruta = "/data/data/com.termux/files/home/storage/dcim/Crecimiento/" + nombre[0]
 envio = "#!/usr/bin/bash \nscp" + " " + ruta + " " + destino
 f = open("envio.sh", "w")
 f.write(envio)
