@@ -41,7 +41,7 @@ commands = {
         'cd': 'Cambia el directorio actual',
         'exec': 'Ejecuta un comando',
         'terminar': 'Termina el proceso del bot en el servidor',
-	    'bateria': 'Estado de la bateria',
+	'bateria': 'Estado de la bateria',
         'foto': 'Tomar una fotografia',
         'intervalo': 'Inicia la toma de fotografias cada cierto intervalo de tiempo',
         'configuracion': 'Configurar herramienta en servidor',
