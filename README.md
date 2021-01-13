@@ -36,4 +36,4 @@ Cada uno de los pasos que se deben seguir para configurar las dos partes se deta
 6. Ejecute el comando `ssh-keygen`, establecer las claves u oprimir enter para dejar vacio este espacio.
 7. Ejecutar el comando `ssh-copy-id usuario@ip` cambiando usuario e ip
 por el nombre de usuario y la ip del computador.
-8. Instale la aplicación [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid&hl=es_CO&gl=US), disponible en la play store y siga los pasos mostrados ![aquí](https://github.com/jsmendozap/Crecimiento/blob/main/Configuraci%C3%B3n%20Macrodroid.gif) para configurar la macro que tomará la foto cada vez que le indiquemos.
+8. Instale la aplicación [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid&hl=es_CO&gl=US), disponible en la play store y siga los pasos mostrados [aquí](https://github.com/jsmendozap/Crecimiento/blob/main/Configuraci%C3%B3n%20Macrodroid.gif) para configurar la macro que tomará la foto cada vez que le indiquemos.
