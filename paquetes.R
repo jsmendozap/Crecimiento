@@ -21,7 +21,10 @@ if (as.numeric(seleccion) == 1){
 
   library(reticulate)
 
-  reticulate::install_miniconda()
+  usuario <- system("whoami", intern = T)
+  ret <- paste("/home", usuario, ".local/share/r-miniconda", sep = "/")
+
+  if (dir.exists(ret) == F){reticulate::install_miniconda()}
 
   paquetes <- c("opencv-python", "numpy", "Pillow", "imageio", "pandas")
 
@@ -57,7 +60,6 @@ if (as.numeric(seleccion) == 1){
 
   ### Configurando monitoreo
 
-  usuario <- system("whoami", intern = T)
   ip <- system("hostname -I", intern = T)
 
   system(paste("rpl -w", "'USUARIO'", paste("'", usuario, "'", sep = ""), paste(ruta, "telefono", "monitoreo.py", sep = "/"), sep = " "))
