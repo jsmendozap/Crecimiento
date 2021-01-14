@@ -107,7 +107,7 @@ bot.set_update_listener(listener)
 def command_start(m):
     cid = m.chat.id
     if cid in permitido:
-        bot.send_message(cid, "¡Bienvenido/a! {}".format(m.chat.first_name), reply_markup = markup)
+        bot.send_message(cid, "¡Bienvenido/a {}!".format(m.chat.first_name), reply_markup = markup)
     else:
         bot.send_message(cid, "Lo siento, usted no se encuentra autorizado para operar este bot")
 
@@ -290,7 +290,10 @@ def eliminar_user(m):
         usuarios.remove(mensaje)
         f = open(getcwd() + "/usuarios.txt", "w")
         for i in range(len(usuarios)):
-            f.writelines(usuarios[i] + "\n")
+            if i == 0:
+            	f.writelines(usuarios[i])
+            else:
+            	f.writelines("\n" + usuarios[i])
         f.close()
         id = mensaje.split()
         permitido.remove(int(id[1]))
