@@ -158,6 +158,9 @@ def foto(m):
     if cid in permitido:
         os.popen("termux-clipboard-set foto")
         time.sleep(5)
+        archivo = os.listdir("/data/data/com.termux/files/home/storage/dcim/Crecimiento/")
+        imagen = open("/data/data/com.termux/files/home/storage/dcim/Crecimiento/" + archivo[0], "rb")
+        bot.send_photo(cid, imagen)
         subprocess.run('python monitoreo.py', shell = True)
         bot.send_message(cid, "Comando ejecutado con exito")
     else:
