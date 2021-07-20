@@ -28,7 +28,7 @@ Cada uno de los pasos que se deben seguir para configurar las dos partes se deta
 
 ## 2. Celular
 
-1. Instale [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=es_CO&gl=US) y [Termux-API](https://play.google.com/store/apps/details?id=com.termux.api&hl=es_CO&gl=US).
+1. Instale [Termux](https://f-droid.org/en/packages/com.termux/)
 2. Dentro de la aplicación, ejecute el comando `termux-setup-storage`
 3. Ejecute: `mv /data/data/com.termux/files/home/storage/downloads/telefono/* /data/data/com.termux/files/home/`
 4. Otorgue permisos de ejecución con `chmod +x telefono.sh`
