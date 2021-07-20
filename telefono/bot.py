@@ -157,7 +157,7 @@ def bateria(m):
 def foto(m):
     cid = m.chat.id
     if cid in permitido:
-        os.popen("termux-clipboard-set foto")
+        os.popen("termux-notification")
         time.sleep(5)
         archivo = os.listdir("/data/data/com.termux/files/home/storage/dcim/Crecimiento/")
         imagen = open("/data/data/com.termux/files/home/storage/dcim/Crecimiento/" + archivo[0], "rb")
@@ -218,7 +218,7 @@ def intervalo(m):
 
 def intervalo_on(m):
    tiempo = m.text
-   intervalo = cron.new(command = 'termux-clipboard-set foto', comment = 'foto')
+   intervalo = cron.new(command = 'termux-notification', comment = 'foto')
    intervalo.minute.every(tiempo)
    time.sleep(10)
    monitoreo = cron.new(command = 'Rscript /data/data/com.termux/files/home/monitoreo.py', comment = 'foto')
