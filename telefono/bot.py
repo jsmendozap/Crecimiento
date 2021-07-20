@@ -29,9 +29,10 @@ if "registro.txt" and "usuarios.txt" not in archivos:
 archivo = open("usuarios.txt", "r")
 usuarios = archivo.read().splitlines()
 for i in range(len(usuarios)):
-    usuario = usuarios[i].split()
-    if int(usuario[1]) not in permitido:
-       permitido.append(int(usuario[1]))
+    if len(usuarios[i]) > 0:
+	usuario = usuarios[i].split()
+    	if int(usuario[1]) not in permitido:
+       		permitido.append(int(usuario[1]))
 
 #Token del BOT
 TOKEN = 'TOKENBOT'
@@ -190,7 +191,8 @@ def callback_query(query):
         f = open("usuarios.txt", "r")
         users = f.read().splitlines()
         for i in range(len(users)):
-            bot.send_message(query.from_user.id, users[i])
+	    if len(users[i]) > 0:
+		bot.send_message(query.from_user.id, users[i])
     elif query.data == "añadir":
         msg = bot.send_message(query.from_user.id, "Ingrese la información del nuevo usuario así:\nNombre: ID telegram")
         bot.register_next_step_handler(msg, callback = ingreso_user)
